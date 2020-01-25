@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       getCounterWishlist();
       getCounterBasket();
       loading();
-      fetch('./db/db.JSON')
+      fetch('../db/db.JSON')
          .then(res => res.json())
          .then(randomSort)
          .then(data => {
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const rendefilterSearchrCard = value => {
       loading();
-      fetch('./db/db.JSON')
+      fetch('../db/db.JSON')
          .then(res => res.json())
          .then(data => {
             const filterData = data.filter(item => {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
    };
 
    const renderWishlist = () => {
-      fetch('./db/db.JSON')
+      fetch('../db/db.JSON')
          .then(res => res.json())
          .then(data => {
             if (wishlist.length !== 0) {
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
    };
 
    const renderBasketCart = () => {
-      fetch('./db/db.JSON')
+      fetch('../db/db.JSON')
          .then(res => res.json())
          .then(data => {
             if (basket.length) {
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const getCardsByCategory = e => {
       loading();
       setTimeout(() => {
-         fetch('./db/db.JSON')
+         fetch('../db/db.JSON')
             .then(res => res.json())
             .then(data => {
                e.preventDefault();
