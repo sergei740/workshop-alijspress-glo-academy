@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
    const goodsWrapper = document.querySelector('.goods-wrapper');
    const categoryList = document.querySelector('.category-list');
    const counterWishlist = document.querySelector('#wishlist > span');
-   const counterBaslet = document.querySelector('#cart > spathForDeploy = 'https://github.com/sergei740/workshop-alijspress-glo-academy/blob/master/db/db.json';
+   const counterBaslet = document.querySelector('#cart > span');
+   const pathForDeploy = 'https://github.com/sergei740/workshop-alijspress-glo-academy/blob/master/db/db.json';
 
    let wishlist = localStorage.wishlist ? [...JSON.parse(localStorage.wishlist)] : [];
    let basket = localStorage.basket ? [...JSON.parse(localStorage.basket)] : [];
