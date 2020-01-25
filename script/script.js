@@ -231,15 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const getCardsByCategory = e => {
       loading();
-      setTimeout(() => {
-         fetch('db/db.json')
-            .then(res => res.json())
-            .then(data => {
-               e.preventDefault();
-               const targetCategory = e.target.dataset.category;
-               renderCardByDataset(targetCategory, data);
-            });
-      }, 1000);
+      fetch('db/db.json')
+         .then(res => res.json())
+         .then(data => {
+            e.preventDefault();
+            const targetCategory = e.target.dataset.category;
+            renderCardByDataset(targetCategory, data);
+         });
    };
 
    const openBasket = e => {
