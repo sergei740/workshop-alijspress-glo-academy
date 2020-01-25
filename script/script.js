@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const categoryList = document.querySelector('.category-list');
    const counterWishlist = document.querySelector('#wishlist > span');
    const counterBaslet = document.querySelector('#cart > span');
-   const pathForDeploy = 'https://github.com/sergei740/workshop-alijspress-glo-academy/blob/master/db/db.json';
+   // const pathForDeploy = 'https://github.com/sergei740/workshop-alijspress-glo-academy/blob/master/db/db.json';
 
    let wishlist = localStorage.wishlist ? [...JSON.parse(localStorage.wishlist)] : [];
    let basket = localStorage.basket ? [...JSON.parse(localStorage.basket)] : [];
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       getCounterWishlist();
       getCounterBasket();
       loading();
-      fetch(pathForDeploy)
+      fetch('db/db.json')
          .then(res => res.json())
          .then(randomSort)
          .then(data => {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const rendefilterSearchrCard = value => {
       loading();
-      fetch(pathForDeploy)
+      fetch('db/db.json')
          .then(res => res.json())
          .then(data => {
             const filterData = data.filter(item => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
    };
 
    const renderWishlist = () => {
-      fetch(pathForDeploy)
+      fetch('db/db.json')
          .then(res => res.json())
          .then(data => {
             if (wishlist.length !== 0) {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
    };
 
    const renderBasketCart = () => {
-      fetch(pathForDeploy)
+      fetch('db/db.json')
          .then(res => res.json())
          .then(data => {
             if (basket.length) {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const getCardsByCategory = e => {
       loading();
       setTimeout(() => {
-         fetch(pathForDeploy)
+         fetch('db/db.json')
             .then(res => res.json())
             .then(data => {
                e.preventDefault();
